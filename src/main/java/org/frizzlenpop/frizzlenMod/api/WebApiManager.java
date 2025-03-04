@@ -233,6 +233,8 @@ public class WebApiManager {
                 createSimpleAdminRedirect(adminDir);
             }
             
+
+            
             plugin.getLogger().info("Web resources copied successfully");
         } catch (Exception e) {
             plugin.getLogger().log(Level.WARNING, "Could not copy all web resources: " + e.getMessage(), e);
@@ -247,8 +249,15 @@ public class WebApiManager {
         try {
             // This is a workaround since we can't list resources in a jar
             // We'll copy known resource files
+        	
+        	if (resourcePath.equals("web")) {
+        		plugin.saveResource("modlogs.yml", false);
+        	}
+        	
             if (resourcePath.equals("web/js")) {
                 plugin.saveResource("web/js/main.js", false);
+                plugin.saveResource("web/js/modlogs.js", false);
+                plugin.saveResource("web/js/users.js", false);
                 plugin.saveResource("web/js/auth.js", false);
                 plugin.saveResource("web/js/api.js", false);
                 plugin.saveResource("web/js/dashboard.js", false);

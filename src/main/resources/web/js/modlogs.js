@@ -24,7 +24,7 @@ async function loadModLogs(page = 0, filter = null, filterParams = {}) {
         }
         
         // Build the API URL based on filter
-        let url;
+        let url = modlogs;
         if (filter === 'player') {
             url = API.modlogs.player(filterParams.playerName, page, PAGE_SIZE);
         } else if (filter === 'action') {
@@ -37,7 +37,11 @@ async function loadModLogs(page = 0, filter = null, filterParams = {}) {
         
         console.log("Fetching from URL:", url);
         
-        // Fetch moderation logs
+       
+		
+		
+		
+		 // Fetch moderation logs
         const response = await apiGet(url);
         console.log("Mod logs API response:", response);
         

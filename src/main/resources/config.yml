@@ -19,7 +19,7 @@ web-api:
   # Secret key for JWT authentication (CHANGE THIS!)
   jwt-secret: "change-this-to-a-secure-random-string"
   # Enable CORS for the web API (needed for external web interfaces)
-  cors-enabled: false
+  cors-enabled: true
   # Dashboard refresh interval (in seconds)
   dashboard-refresh: 30
   # Maximum age for JWT tokens (in hours)
